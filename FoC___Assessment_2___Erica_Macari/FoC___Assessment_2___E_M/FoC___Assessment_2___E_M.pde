@@ -3,22 +3,39 @@ void setup() {
 }
 
 String inputText = "";
+Users NamesList = new Users();
 
 void draw() {
   background(0);
-  loginDisplay();
-  WrongPassword();
+  if (UserLoggedIn == true) {
+    MainPage();
+  } else if (UserLoggedIn == false) {
+    loginDisplay();
+    WrongPassword();
+  }
 }
 
 
 void keyPressed() {
-  if (key == ENTER) {    // Send the input to a checker
-    CheckPassword(inputText.toLowerCase());
-    inputText ="";
-    return;
-  } else if (key == BACKSPACE && inputText.length() > 0) {
-    inputText=inputText.substring(0, inputText.length()-1); // remove last letter
-  } else if ( key != BACKSPACE) {
-    inputText += key; // add the key to input
+  if (UserLoggedIn == true) {
+    if (key == ENTER) {
+      CommandCheck(inputText.toLowerCase());
+      inputText ="";
+      return;
+    } else if (key == BACKSPACE && inputText.length() > 0) {
+      inputText=inputText.substring(0, inputText.length()-1); // remove last letter
+    } else if ( key != BACKSPACE) {
+      inputText += key; // add the key to input
+    }
+  } else if (UserLoggedIn == false) {
+    if (key == ENTER) {    // Send the input to a checker
+      CheckPassword(inputText.toLowerCase());
+      inputText ="";
+      return;
+    } else if (key == BACKSPACE && inputText.length() > 0) {
+      inputText=inputText.substring(0, inputText.length()-1); // remove last letter
+    } else if ( key != BACKSPACE) {
+      inputText += key; // add the key to input
+    }
   }
 }
