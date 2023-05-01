@@ -7,6 +7,7 @@ Users NamesList = new Users();
 
 void draw() {
   background(0);
+
   if (UserLoggedIn == true) {
     MainPage();
   } else if (UserLoggedIn == false) {
@@ -26,6 +27,9 @@ void keyPressed() {
       inputText=inputText.substring(0, inputText.length()-1); // remove last letter
     } else if ( key != BACKSPACE) {
       inputText += key; // add the key to input
+      ErrorMessage = "";
+      EntryFailed = false;
+      PrintNames = false;
     }
   } else if (UserLoggedIn == false) {
     if (key == ENTER) {    // Send the input to a checker

@@ -6,7 +6,6 @@ void CheckPassword(String str) {
   if (str.equals("colleges23") == true) {
     UserLoggedIn = true;
     WrongPassword = false;
-    
     return;
   } else {
     // UserLoggedIn = false;
