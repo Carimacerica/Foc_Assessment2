@@ -1,17 +1,16 @@
 
-Boolean Password = false;
+Boolean UserLoggedIn = false;
 Boolean WrongPassword = false;
 
 void CheckPassword(String str) {
   if (str.equals("colleges23") == true) {
-    Password = true;
+    UserLoggedIn = true;
     WrongPassword = false;
+    
     return;
-  } else if (str != ("Colleges23")) {
-    Password = false;
-    WrongPassword = true;
   } else {
-    Password = false;
+    // UserLoggedIn = false;
+    WrongPassword = true;
   }
 }
 
