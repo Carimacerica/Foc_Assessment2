@@ -8,11 +8,19 @@ class Users {
     this.Names.add("jim");
     this.Names.add("pam");
     this.Names.add("kevin");
-    println(this.Names);
   }
 
   void AddName(String Name) {
-    this.Names.add(Name);
-    println(Names);
+
+    if (Names.size() >= 65) {
+      ErrorMessage = "Out of Memory, 65 name limit reached";
+      EntryFailed = true;
+    } else {
+      Names.add(Name);
+    }
+  }
+
+  ArrayList<String> GetNames() {
+    return Names;
   }
 }
