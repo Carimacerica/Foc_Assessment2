@@ -1,6 +1,20 @@
-void loginDisplay() {
+void BackgroundMatrix() {
+
+  for (int i = 0; i <  Numbers.size(); i++) {
+    MatrixNumber m =  Numbers.get(i);
+    m.Update();
+    m.Render();
+  }
+}
+
+void loginDisplay(){
+
+  fill(0);
+  rect(120,150,300,170);
+   
   fill(0, 175, 0);
   textSize(18);
-  text("Enter Password:", 200, 280);
-  text(inputText.toLowerCase(), 200, 300);
+  text("USER DATABASE", 180, 200);
+  text("Enter Password:", 180, 260);
+  text(inputText.toLowerCase(), 180, 280);
 }
