@@ -1,5 +1,5 @@
 class Users {
-  String temp;
+
   ArrayList<String> Names = new ArrayList<String>();
 
   Users() {
