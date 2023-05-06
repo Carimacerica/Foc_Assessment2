@@ -7,11 +7,11 @@ void BackgroundMatrix() {
   }
 }
 
-void loginDisplay(){
+void loginDisplay() {
 
   fill(0);
-  rect(120,150,300,170);
-   
+  rect(120, 160, 250, 180);
+
   fill(0, 175, 0);
   textSize(18);
   text("USER DATABASE", 180, 200);

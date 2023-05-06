@@ -8,12 +8,14 @@ void CommandCheck(String str) {
   } else if (list.length == 2 && list[0].equals("search") && !list[1].equals("")) {
     for (String name : NamesList.GetNames()) {
       if (name.equals(list[1])) {
-        SearchUserResult = "Found User -" + list[1];
+        SearchUserResult = "Found User - " + list[1];
         return;
       }
     }
-    SearchUserResult = "User Not Found" + list[1];
-  }else {
+    SearchUserResult = "User Not Found - " + list[1];
+  } else if (str.equals("sort names")) { // sort names
+    NamesList.BubbleSort();
+  } else {
     EntryFailed = true;
     ErrorMessage = "Entry Failed, Try Again";
   }

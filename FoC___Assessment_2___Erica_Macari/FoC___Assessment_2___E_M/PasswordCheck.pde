@@ -16,6 +16,6 @@ void CheckPassword(String str) {
 void WrongPassword() {
   if (WrongPassword == true) {
     textSize(18);
-    text("Wrong Password. Try Again", 200, 350);
+    text("Wrong Password. Try Again", 150, 330);
   }
 }

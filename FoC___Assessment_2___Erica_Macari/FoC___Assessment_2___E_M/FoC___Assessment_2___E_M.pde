@@ -13,7 +13,7 @@ String inputText = "";
 Users NamesList = new Users();
 
 void draw() {
-  background(0); // black colour of background 
+  background(0); // black colour of background
   BackgroundMatrix();
 
   if (UserLoggedIn == true) {
@@ -23,7 +23,6 @@ void draw() {
     WrongPassword();
   }
 }
-
 
 void keyPressed() {
   if (UserLoggedIn == true) {
