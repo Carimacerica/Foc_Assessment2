@@ -10,7 +10,6 @@ void LogOutButton() {
   text("Log Out", 430, 25);
 }
 
-
 void mousePressed() {
   if (mouseX > x &&
     mouseX < x + checkBoxSizeX &&

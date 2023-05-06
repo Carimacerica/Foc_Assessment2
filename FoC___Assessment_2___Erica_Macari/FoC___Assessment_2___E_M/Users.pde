@@ -1,6 +1,5 @@
 class Users {
-
-
+  String temp;
   ArrayList<String> Names = new ArrayList<String>();
 
   Users() {
@@ -34,9 +33,25 @@ class Users {
       Names.add(Name);
     }
   }
-
-
   ArrayList<String> GetNames() {
     return Names;
+  }
+
+  void BubbleSort() {
+    int n = Names.size();
+    boolean notFinishedSorting = true;
+    while (notFinishedSorting) {
+      notFinishedSorting = false;
+      for (int i=1; i< n; i++) {
+        if (Names.get(i - 1).compareTo(Names.get(i)) > 0) {
+          String tempName = Names.get(i - 1);
+          Names.set(i - 1, Names.get(i));
+          Names.set(i, tempName);
+          notFinishedSorting = true;
+        }
+      }
+      n --;
+    }
+    PrintNames = true;
   }
 }

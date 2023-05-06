@@ -8,9 +8,10 @@ void MainPage() {
   fill(0);
   rect(15, 5, 140, 20); // black box behind command board
   rect(15, 25, 330, 20); // black box for search instructions
-  rect(15, 45, 280, 20);// black box for add instructions
-  rect(15, 65, 210, 20);// black box for print instructions
-  rect(120, 150, 300, 170);// black box for input command
+  rect(15, 45, 280, 20); // black box for add instructions
+  rect(15, 65, 210, 20); // black box for print instructions
+  rect(15, 85, 200, 20); // black box for sort instructions
+  rect(140, 160, 230, 180); // black box for input command
 
   fill(0, 175, 0);
   textSize(18);
@@ -18,20 +19,21 @@ void MainPage() {
   text("Search Users = 'search' space 'users name'", 20, 40); // command search instructions
   text("Add User = 'add' space 'users name'", 20, 60); // command add instructions
   text("Print Users = 'print names'", 20, 80); // command print instructions
-  text("USER DATABASE", 200, 200);
-  text("Input Command:", 200, 230);
-  text(inputText.toLowerCase(), 200, 260); // input text to function commands
+  text("Sort Users = 'sort names'", 20, 100);  // command sort instructions
+  text("USER DATABASE", 180, 200);
+  text("Input Command:", 180, 230);
+  text(inputText.toLowerCase(), 180, 260); // input text to function commands
 
   if (EntryFailed == true) {
     fill(0, 175, 0);
     textSize(18);
-    text (ErrorMessage, 200, 310); // if input is invalid error message appears
+    text (ErrorMessage, 170, 310); // if input is invalid error message appears
   }
-  
+
   if (SearchUserResult != "") {
     fill(0, 175, 0);
     textSize(18);
-    text (SearchUserResult, 200, 310);
+    text (SearchUserResult, 180, 310);
   }
 
   if (PrintNames == true) {
