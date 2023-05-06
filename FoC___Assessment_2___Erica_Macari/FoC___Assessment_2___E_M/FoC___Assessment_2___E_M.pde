@@ -1,12 +1,20 @@
+int MatrixCount = 350;
+ArrayList <MatrixNumber> Numbers = new ArrayList<MatrixNumber>();
+
 void setup() {
-  size(500, 500);
+  size(500, 500); // size of drawing
+
+  for (int i=0; i < MatrixCount; i++) {
+    Numbers.add( new MatrixNumber(random(0, 500), random(0, 500))); // Creates all the numbers for the opening screen at random X / Y positions
+  }
 }
 
 String inputText = "";
 Users NamesList = new Users();
 
 void draw() {
-  background(0);
+  background(0); // black colour of background 
+  BackgroundMatrix();
 
   if (UserLoggedIn == true) {
     MainPage();
@@ -30,6 +38,7 @@ void keyPressed() {
       ErrorMessage = "";
       EntryFailed = false;
       PrintNames = false;
+      SearchUserResult = "";
     }
   } else if (UserLoggedIn == false) {
     if (key == ENTER) {    // Send the input to a checker

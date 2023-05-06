@@ -1,25 +1,47 @@
 boolean EntryFailed = false;
 String ErrorMessage = "";
 boolean PrintNames = false;
+String SearchUserResult = "";
 
 void MainPage() {
 
+  fill(0);
+  rect(15, 5, 140, 20); // black box behind command board
+  rect(15, 25, 330, 20); // black box for search instructions
+  rect(15, 45, 280, 20);// black box for add instructions
+  rect(15, 65, 210, 20);// black box for print instructions
+  rect(120, 150, 300, 170);// black box for input command
+
   fill(0, 175, 0);
   textSize(18);
-  text("Welcome", 200, 200);
-  text(inputText.toLowerCase(), 200, 300);
+  text("Command Board", 20, 20);
+  text("Search Users = 'search' space 'users name'", 20, 40); // command search instructions
+  text("Add User = 'add' space 'users name'", 20, 60); // command add instructions
+  text("Print Users = 'print names'", 20, 80); // command print instructions
+  text("USER DATABASE", 200, 200);
+  text("Input Command:", 200, 230);
+  text(inputText.toLowerCase(), 200, 260); // input text to function commands
 
   if (EntryFailed == true) {
     fill(0, 175, 0);
     textSize(18);
-    text (ErrorMessage, 150, 250);
+    text (ErrorMessage, 200, 310); // if input is invalid error message appears
+  }
+  
+  if (SearchUserResult != "") {
+    fill(0, 175, 0);
+    textSize(18);
+    text (SearchUserResult, 200, 310);
   }
 
   if (PrintNames == true) {
+    fill(0);
+    rect(0, 235, 500, 270);
     int x = 10;
     int y = 250;
     for (String name : NamesList.GetNames()) {
       textSize(18);
+      fill(0, 175, 0);
       text (name, x, y);
       y += 20;
       if (y >= 500) {
@@ -28,6 +50,5 @@ void MainPage() {
       }
     }
   }
-
   LogOutButton();
 }
