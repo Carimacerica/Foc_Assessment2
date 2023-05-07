@@ -2,7 +2,7 @@ class Users {
 
   ArrayList<String> Names = new ArrayList<String>();
 
-  Users() { // added a bunch of names to start off the array list 
+  Users() { // added a bunch of names to start off the array list
     this.Names.add("michael");
     this.Names.add("dwight");
     this.Names.add("jim");
@@ -25,19 +25,23 @@ class Users {
   }
 
   void AddName(String Name) {
-
-    if (Names.size() >= 65) { // added a limit to the array list size to adhere to the screensize limit for printing them
+    // added a limit to the array list size to adhere to the screensize limit for printing them
+    if (Names.size() >= 65) {
       ErrorMessage = "Out Of Memory, 65 Name Limit Reached";
       EntryFailed = true;
     } else {
-      Names.add(Name);
+      Names.add(Name); // add names to array list if called on
     }
   }
+
+  void RemoveName(String Name) {
+    Names.remove(Name); // remove names from array list if called on
+  }
   ArrayList<String> GetNames() {
-    return Names;
+    return Names; // returns all names in array list when called
   }
 
-  void BubbleSort() { // sorting algorithm for the list of names 
+  void BubbleSort() { // sorting algorithm for the list of names
     int n = Names.size();
     boolean notFinishedSorting = true;
     while (notFinishedSorting) { // continue sorting until there are no more names left to move
@@ -50,7 +54,7 @@ class Users {
           notFinishedSorting = true;
         }
       }
-      n --; // does not go through the last element with each loop as it is already sorted 
+      n --; // does not go through the last element with each loop as it is already sorted
     }
     PrintNames = true; // displays the names after they are sorted on the screen for the user to check
   }
