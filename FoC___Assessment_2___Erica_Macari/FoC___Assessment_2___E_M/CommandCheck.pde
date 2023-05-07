@@ -5,6 +5,8 @@ void CommandCheck(String str) {
     NamesList.AddName(list[1]); // add name to list
   } else if (str.equals("print names")) { // print names to screen
     PrintNames = true;
+  } else if (str.equals("logout")) {
+    UserLoggedIn = false;
   } else if (list.length == 2 && list[0].equals("search") && !list[1].equals("")) {
     for (String name : NamesList.GetNames()) {
       if (name.equals(list[1])) {

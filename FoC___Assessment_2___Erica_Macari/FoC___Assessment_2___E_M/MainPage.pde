@@ -11,6 +11,7 @@ void MainPage() {
   rect(15, 45, 280, 20); // black box for add instructions
   rect(15, 65, 210, 20); // black box for print instructions
   rect(15, 85, 200, 20); // black box for sort instructions
+  rect(15, 105, 140, 20); // black box for log out instructions
   rect(140, 160, 230, 180); // black box for input command
 
   fill(0, 175, 0);
@@ -20,6 +21,8 @@ void MainPage() {
   text("Add User = 'add' space 'users name'", 20, 60); // command add instructions
   text("Print Users = 'print names'", 20, 80); // command print instructions
   text("Sort Users = 'sort names'", 20, 100);  // command sort instructions
+  text("Logout = 'logout'", 20, 120);  // command log out instructions
+
   text("USER DATABASE", 180, 200);
   text("Input Command:", 180, 230);
   text(inputText.toLowerCase(), 180, 260); // input text to function commands
