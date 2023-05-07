@@ -15,5 +15,5 @@ void loginDisplay() {
   textSize(18);
   text("USER DATABASE", 180, 200);
   text("Enter Password:", 180, 260);
-  text(inputText.toLowerCase(), 180, 280); // text input
+  text(inputText.toLowerCase(), 180, 300); // text input
 }
