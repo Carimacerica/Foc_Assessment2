@@ -5,9 +5,10 @@ class MatrixNumber {
   float chance = random(0, 10);
   float NumberSize = random(5, 15);
 
+  // constructor
   MatrixNumber(float x, float y) {
     pos = new PVector(x, y);
-    speed = NumberSize * 0.05f;
+    speed = NumberSize * 0.05f; // rate at which the matrix elements move
   }
 
   void Update() {

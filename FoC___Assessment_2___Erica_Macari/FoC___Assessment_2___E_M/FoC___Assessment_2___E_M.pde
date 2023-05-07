@@ -1,11 +1,11 @@
-int MatrixCount = 350;
+int MatrixCount = 350; // number of elements in the matrix background
 ArrayList <MatrixNumber> Numbers = new ArrayList<MatrixNumber>();
 
 void setup() {
   size(500, 500); // size of drawing
 
   for (int i=0; i < MatrixCount; i++) {
-    Numbers.add( new MatrixNumber(random(0, 500), random(0, 500))); // Creates all the numbers for the opening screen at random X / Y positions
+    Numbers.add( new MatrixNumber(random(0, 500), random(0, 500))); // Creates all the number elements for the opening screen at random X / Y positions
   }
 }
 
@@ -16,7 +16,7 @@ void draw() {
   background(0); // black colour of background
   BackgroundMatrix();
 
-  if (UserLoggedIn == true) {
+  if (UserLoggedIn == true) { // what displays the different screens depending if the user is logged in or not
     MainPage();
   } else if (UserLoggedIn == false) {
     loginDisplay();
@@ -27,7 +27,6 @@ void draw() {
 void keyPressed() {
   if (UserLoggedIn == true) {
     if (key == ENTER) {
-      CommandCheck(inputText.toLowerCase());
       inputText ="";
       return;
     } else if (key == BACKSPACE && inputText.length() > 0) {
