@@ -4,6 +4,7 @@ class MatrixNumber {
   float speed;
   float chance = random(0, 10);
   float NumberSize = random(5, 15);
+  float Transparency = random(50, 260);
 
   // constructor
   MatrixNumber(float x, float y) {
@@ -19,7 +20,7 @@ class MatrixNumber {
   }
 
   void Render() {
-    fill(0, 175, 0, random(50, 260)); // green + random opacity
+    fill(0, 175, 0, Transparency); // green + random opacity
     textSize(NumberSize);
     if (chance > 5) {
       text ("1", pos.x, pos.y); // text 1 on login screen
