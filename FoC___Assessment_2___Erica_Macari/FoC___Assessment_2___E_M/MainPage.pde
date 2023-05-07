@@ -2,6 +2,8 @@ boolean EntryFailed = false;
 String ErrorMessage = "";
 boolean PrintNames = false;
 String SearchUserResult = "";
+boolean NameAdded = false;
+boolean NameRemoved = false;
 
 void MainPage() {
 
@@ -41,6 +43,18 @@ void MainPage() {
     fill(0, 175, 0);
     textSize(18);
     text (SearchUserResult, 180, 310);
+  }
+// text to confirm a name was added when used
+  if (NameAdded == true) {
+    fill(0, 175, 0);
+    textSize(18);
+    text ("Name Added", 180, 310);
+  }
+// text to confirm a name was removed when used
+  if (NameRemoved == true) {
+    fill(0, 175, 0);
+    textSize(18);
+    text ("Name Removed", 180, 310);
   }
 
   // Displays users list printed on screen if called from command functions

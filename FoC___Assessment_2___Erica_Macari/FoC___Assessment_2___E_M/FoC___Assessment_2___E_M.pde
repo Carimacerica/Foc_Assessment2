@@ -27,6 +27,7 @@ void draw() {
 void keyPressed() {
   if (UserLoggedIn == true) {
     if (key == ENTER) {
+      CommandCheck(inputText.toLowerCase());
       inputText ="";
       return;
     } else if (key == BACKSPACE && inputText.length() > 0) {
@@ -36,6 +37,8 @@ void keyPressed() {
       ErrorMessage = "";
       EntryFailed = false;
       PrintNames = false;
+      NameAdded = false;
+      NameRemoved = false;
       SearchUserResult = "";
     }
   } else if (UserLoggedIn == false) {
